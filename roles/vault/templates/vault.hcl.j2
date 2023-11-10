@@ -1,11 +1,12 @@
+{% if vault_local_enable_local_store %}
 storage "file" {
-  path = "/home/vault/data"
+    path = "/home/vault/data"
 }
-
+{% endif %}
 
 ui = true
 
 listener "tcp" {
-	address     = "0.0.0.0:8200"
-	tls_disable = 1
+    address     = "0.0.0.0:8200"
+    tls_disable = 1
 }

@@ -4,4 +4,4 @@
 
 - name: Reload vault
   command: systemctl restart vault
-  listen: vault_restart
+  listen: systemd_vault_restart

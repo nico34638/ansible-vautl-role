@@ -20,6 +20,7 @@
    owner: "{{ vault_user }}"
    group: "{{ vault_group }}"
    mode: u=rwx,g=rx,o=
+  when: vault_local_enable_local_store == true
 
 - name: Install prerequisites
   package:
@@ -73,3 +74,5 @@
     name: vault
     state: started
     enabled: yes
+  notify: systemd_vault_restart
+
