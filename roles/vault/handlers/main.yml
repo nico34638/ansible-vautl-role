@@ -1,0 +1,7 @@
+- name: Reload systemd
+  command: systemctl daemon-reload
+  listen: systemd_reload
+
+- name: Reload vault
+  command: systemctl restart vault
+  listen: vault_restart
